@@ -1,0 +1,16 @@
+{
+  "name": "js-postgresql-practice",
+  "version": "1.0.0",
+  "description": "Demonstrate how to connect to a remote Heroku database from a local Node.js server.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Headrick",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.18.2"
+  }
+}
