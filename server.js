@@ -16,26 +16,26 @@ app.set("port", (process.env.PORT || 5000));
 let port = app.get("port");
 
 
-app.get("/getPerson", getPerson);
-// app.get("/getPerson/:id", getPerson);
+app.get("/getState", getState);
+// app.get("/getState/:id", getState);
 
 
 app.listen(port, function () {
     console.log(`Now listening for connections on port: ${port}`)
 });
 
-function getPerson(req, res) {
-    console.log("Getting person information...");
+function getState(req, res) {
+    console.log("Getting state name...");
 
     let id = req.query.id;
     // let id = req.params.id;
 
-    console.log(`Retrieving person with id ${id}`);
+    console.log(`Retrieving state with id ${id}`);
 
 
-    getPersonFromDb(id, function (error, result) {
+    getStateFromDb(id, function (error, result) {
 
-        console.log("Back from the getPersonFromDb function with result:", result);
+        console.log("Back from the getStateFromDb function with result:", result);
 
         if (error || result == null || result.length != 1) {
             res.status(500).json({success:false, data:error});
@@ -43,22 +43,12 @@ function getPerson(req, res) {
             res.json(result[0]);
         }
 
-    });
+    });}
 
-    // let result = {
-    //     id: 238,
-    //     first: "John",
-    //     last: "Smith",
-    //     birthdate: "1950-02-05"
-    // };
+function getStateFromDb(id, callback) {
+    console.log(`getStateFromDb called with id: ${id}`);
 
-    // res.json(result);
-}
-
-function getPersonFromDb(id, callback) {
-    console.log(`getPersonFromDb called with id: ${id}`);
-
-    let sql = `SELECT id, first, last, birthdate FROM person WHERE id = $1::int`;
+    let sql = `SELECT stateName FROM us_states WHERE id = $1::int`;
 
     let params = [id];
 
