@@ -13,7 +13,7 @@ function loadStates() {
     fetch(url)
         .then((response) => {
             // console.log(response);
-            console.log(response.json(stateName));
+            console.log(response.json().stateName);
             // return response.json();
         })
         .then((data) => {
