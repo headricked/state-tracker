@@ -12,7 +12,8 @@ function loadStates() {
 
     fetch(url)
         .then((response) => {
-            console.log(response);
+            // console.log(response);
+            console.log(response.json());
             return response.json();
         })
         .then((data) => {
