@@ -71,24 +71,24 @@ document.querySelector('#getStates').addEventListener('click', loadStates, false
 let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=1';
 
 function loadStates(url) {
-    fetch(url)
-        .then((response) => {
-            console.log(response);
-            return response.json();
-        })
-        .then((data) => {
+    // fetch(url)
+    //     .then((response) => {
+    //         console.log(response);
+    //         return response.json();
+    //     })
+    //     .then((data) => {
 
-            let table = '<table>';
+    //         let table = '<table>';
 
-            data.results.forEach(result => {
-                table += '<tr>';
-                table += '<td class="name">' + result.stateName + '</td>';
-                table += '</tr>'
-            })
+    //         data.results.forEach(result => {
+    //             table += '<tr>';
+    //             table += '<td class="name">' + result.stateName + '</td>';
+    //             table += '</tr>'
+    //         })
 
-            table += '</table>';
+    //         table += '</table>';
 
-            document.getElementById('state').innerHTML = table;
+    //         document.getElementById('state').innerHTML = table;
 
-        });
+    //     });
 }
