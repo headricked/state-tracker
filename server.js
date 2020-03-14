@@ -1,71 +1,77 @@
-const express = require('express')
-const app = express()
+let express = require('express')
+let app = express()
 const { Pool } = require('pg')
 // const port = process.env.PORT
 
 const connectionString = process.env.DATABASE_URL || "postgres://rhcyjmffmuvedh:b589ae9eee3237bbd30d84e6dcc9dde10a85624da2283302edbd51f892ad0b4d@ec2-35-168-54-239.compute-1.amazonaws.com:5432/d9f16r5fjgsps2?ssl=true";
 
-const pool = new Pool({ connectionString: connectionString });
+// const connectionString = process.env.DATABASE_URL || "postgres://paxshovoeowuum:7bf0dac9156d9f4e9b065e0c52780bd68235bdfa96a1b92f4c42332029638fd0@ec2-52-23-14-156.compute-1.amazonaws.com:5432/dbsf60s7o9h66g?ssl=true";
 
-app.set('port', (process.env.PORT || 5000));
-app.use(express.static(__dirname + '/public'));
+const pool = new Pool(
+    {
+        connectionString: connectionString
+    }
+);
 
-app.get('/getPerson', getPerson);
 
-app.listen(app.get('port'), function() {
-    console.log('Server is listening on port', app.get('port'));
+app.set("port", (process.env.PORT || 5000));
+let port = app.get("port");
+
+
+app.get("/getPerson", getPerson);
+// app.get("/getPerson/:id", getPerson);
+
+
+app.listen(port, function () {
+    console.log(`Now listening for connections on port: ${port}`)
 });
 
+function getPerson(req, res) {
+    console.log("Getting person information...");
 
-function getPerson(request, response) {
-    const id = request.query.id;
+    let id = req.query.id;
+    // let id = req.params.id;
 
-    getPersonFromDb(id, function(error, result) {
+    console.log(`Retrieving person with id ${id}`);
+
+
+    getPersonFromDb(id, function (error, result) {
+
+        console.log("Back from the getPersonFromDb function with result:", result);
+
         if (error || result == null || result.length != 1) {
-            response.status(500).json({success: false, data: error});
+            res.status(500).json({success:false, data:error});
         } else {
-            const person = result[0];
-            response.status(200).json(person);
+            res.json(result[0]);
         }
+
     });
+
+    // let result = {
+    //     id: 238,
+    //     first: "John",
+    //     last: "Smith",
+    //     birthdate: "1950-02-05"
+    // };
+
+    // res.json(result);
 }
 
-
 function getPersonFromDb(id, callback) {
-    console.log(`Getting person from DB with id: ${id}`);
-    
-    const sql = "SELECT id, firstName, lastName, dateOfBirth FROM person WHERE id = $1::int";
-    
-    const params = [id];
+    console.log(`getPersonFromDb called with id: ${id}`);
 
-    pool.query(sql, params, function(err, result) {
-        if (err) {
-            console.log("Error in query: ")
-            console.log(err);
+    let sql = `SELECT id, first, last, birthdate FROM person WHERE id = $1::int`;
+
+    let params = [id];
+
+    pool.query(sql, params, function (error, result) {
+        if (error) {
+            console.log("An error with the database occurred");
+            console.log(error);
             callback(err, null);
         }
 
-        console.log("Found result: " + JSON.stringify(result.rows));
-
+        console.log("Found database result: " + JSON.stringify(result.rows));
         callback(null, result.rows);
-    })
+    });
 }
-
-
-
-
-// var sql = "SELECT * FROM person";
-
-// pool.query(sql, function (err, result) {
-//     // If an error occurred...
-//     if (err) {
-//         console.log("Error in query: ")
-//         console.log(err);
-//     }
-
-//     // Log this to the console for debugging purposes.
-//     console.log("Back from DB with result:");
-//     console.log(result.rows);
-
-
-// }); 
