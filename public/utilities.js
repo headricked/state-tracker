@@ -8,6 +8,7 @@ let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=1';
 
 function loadStates(url) {
     console.log('fire off loadStates(url)');
+    console.log(url);
 
 //     fetch(url)
 //         .then((response) => {
