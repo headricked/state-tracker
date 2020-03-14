@@ -1,37 +1,3 @@
-// // add event listener to button
-// document.querySelector('#getStates').addEventListener('click', loadStates, false);
-
-// let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=1';
-
-// function loadStates(url) {
-//     fetch(url)
-//         .then((response) => {
-//             console.log(response);
-//             return response.json();
-//         })
-//         .then((data) => {
-
-//             let table = '<table>';
-
-//             data.results.forEach(result => {
-//                 table += '<tr>';
-//                 table += '<td class="name">' + result.stateName + '</td>';
-//                 table += '</tr>'
-//             })
-
-//             table += '</table>';
-
-//             document.getElementById('state').innerHTML = table;
-
-//         });
-// }
-
-
-
-
-
-
-
 let express = require('express')
 let app = express()
 const { Pool } = require('pg')
@@ -96,4 +62,33 @@ function getStateFromDb(id, callback) {
         console.log("Found database result: " + JSON.stringify(result.rows));
         callback(null, result.rows);
     });
+}
+
+
+// add event listener to button
+document.querySelector('#getStates').addEventListener('click', loadStates, false);
+
+let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=1';
+
+function loadStates(url) {
+    fetch(url)
+        .then((response) => {
+            console.log(response);
+            return response.json();
+        })
+        .then((data) => {
+
+            let table = '<table>';
+
+            data.results.forEach(result => {
+                table += '<tr>';
+                table += '<td class="name">' + result.stateName + '</td>';
+                table += '</tr>'
+            })
+
+            table += '</table>';
+
+            document.getElementById('state').innerHTML = table;
+
+        });
 }
