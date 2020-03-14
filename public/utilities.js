@@ -6,7 +6,9 @@ console.log('hello');
 // let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=1';
 // let url = 'https://nameless-waters-73580.herokuapp.com/getState';
 
-// function loadStates(url) {
+function loadStates(url) {
+    console.log('fire off loadStates(url)');
+
 //     fetch(url)
 //         .then((response) => {
 //             console.log(response);
@@ -27,4 +29,4 @@ console.log('hello');
 //             document.getElementById('state').innerHTML = table;
 
 //         });
-// }
+}
