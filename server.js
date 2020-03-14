@@ -1,3 +1,12 @@
+// add event listener to button
+document.querySelector('#getStates').addEventListener('click', loadStates, false);
+
+function loadStates() {
+    
+}
+
+
+
 let express = require('express')
 let app = express()
 const { Pool } = require('pg')
