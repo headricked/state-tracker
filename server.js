@@ -30,7 +30,7 @@ app.set('view engine', 'ejs');
 
 // set up rule that says requests to "/math" should be
 // handled by the handleCalculation function
-app.get('/calculation', handleCalculation);
+// app.get('/calculation', handleCalculation);
 
 
 
