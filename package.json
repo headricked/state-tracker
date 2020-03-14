@@ -1,5 +1,5 @@
 {
-  "name": "states-tracker",
+  "name": "state-tracker",
   "version": "1.0.0",
   "description": "Demonstrate how to connect to a remote Heroku database from a local Node.js server.",
   "main": "server.js",
