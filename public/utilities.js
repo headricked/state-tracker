@@ -3,10 +3,10 @@ document.querySelector('#getStates').addEventListener('click', loadStates, false
 
 console.log('hello');
 
-// let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=1';
-let joe = 'getState';
+let joe = 'https://nameless-waters-73580.herokuapp.com/getState?id=1';
+// let joe = 'getState';
 
-function loadStates(url) {
+function loadStates() {
     console.log('fire off loadStates(url)');
     console.log(joe);
 
