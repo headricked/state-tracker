@@ -1,7 +1,8 @@
 // add event listener to button
 document.querySelector('#getStates').addEventListener('click', loadStates, false);
 
-let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=1';
+// let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=1';
+let url = 'https://nameless-waters-73580.herokuapp.com/getState';
 
 function loadStates(url) {
     fetch(url)
