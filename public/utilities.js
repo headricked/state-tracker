@@ -8,32 +8,21 @@ function loadStates() {
     request.open('GET', url);
     request.responseType = 'json';
 
-    // console.log("request: ", request);
-    // console.log("request.response: " + request.response);
-    // console.log("request.responseType: " + request.responseType);
-    // console.log(request.response);
-    // console.log(response.statename);
-    // console.log(request.statename);
-    // console.log('statename');
-
     request.onload = function () {
-        // console.log(request.response);
-        console.log(response.text());
+        console.log(request.response);
+        console.log(request.response);
+        // console.log(response.text());
     };
 
     request.send();
 
-
-
-    // console.log("request: ", request);
-    // console.log("request.response: " + request.response);
-    // console.log("request.responseType: " + request.responseType);
-
-    // fetch(url).then(function (response) {
-    //     response.text().then(function (text) {
-    //         poemDisplay.textContent = text;
-    //     });
-    // });
+    fetch(url)
+        .then(function (response) {
+            response.text()
+            .then(function (text) {
+                console.log(text);
+            });
+    });
 }
 
 
