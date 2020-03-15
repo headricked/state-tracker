@@ -11,9 +11,12 @@ function loadStates() {
     request.onload = function () {
         // console.log(request.response);
         console.log(request.response.statename);
+        document.getElementById("demo").innerHTML = this.responseText;
     };
 
     request.send();
+
+
 
     // fetch(url)
     //     .then(function (statename) {
