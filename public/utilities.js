@@ -15,13 +15,13 @@ function loadStates() {
 
     request.send();
 
-    fetch(url)
-        .then(function (statename) {
-            statename.text()
-            .then(function (text) {
-                console.log('text: ' + text);
-            });
-    });
+    // fetch(url)
+    //     .then(function (statename) {
+    //         statename.text()
+    //         .then(function (text) {
+    //             console.log('text: ' + text);
+    //         });
+    // });
 }
 
 
