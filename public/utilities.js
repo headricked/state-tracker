@@ -16,8 +16,8 @@ function loadStates() {
     request.send();
 
     fetch(url)
-        .then(function (stateName) {
-            stateName.text()
+        .then(function (statename) {
+            statename.text()
             .then(function (text) {
                 console.log(text);
             });
