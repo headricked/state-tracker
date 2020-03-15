@@ -17,8 +17,8 @@ function loadStates() {
     // console.log('statename');
 
     request.onload = function () {
-        console.log(request.response);
-        console.log(request.response[0]);
+        // console.log(request.response);
+        console.log(request.response.text());
     };
 
     request.send();
