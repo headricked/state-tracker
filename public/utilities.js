@@ -3,11 +3,30 @@ document.querySelector('#getStates').addEventListener('click', loadStates, false
 
 let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=35';
 
-async function loadStates() {
-    // let request = new XMLHttpRequest();
-    let response = await fetch(url);
-    console.log(response);
+function loadStates() {
+    let request = new XMLHttpRequest();
+    request.open('GET', url);
+    request.responseType = 'json';
 
+    console.log(request);
+    console.log(request.response);
+    console.log(request.responseType);
+    // console.log(request.response);
+    // console.log(response.statename);
+    // console.log(request.statename);
+    // console.log('statename');
+
+    // request.onload = function () {
+    //     poemDisplay.textContent = request.response;
+    // };
+
+    request.send();
+
+    // fetch(url).then(function (response) {
+    //     response.text().then(function (text) {
+    //         poemDisplay.textContent = text;
+    //     });
+    // });
 }
 
 
