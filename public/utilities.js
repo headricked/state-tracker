@@ -8,7 +8,8 @@ function loadStates() {
     request.open('GET', url);
     request.responseType = 'json';
 
-    console.log(request);
+    console.log(request.response);
+    console.log(request.response.stateName);
 
     // request.onload = function () {
     //     poemDisplay.textContent = request.response;
