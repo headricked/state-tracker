@@ -8,12 +8,12 @@ function loadStates() {
     request.open('GET', url);
     request.responseType = 'json';
 
-    let state = JSON.parse(request.response);
+    // let state = JSON.parse(request.response);
+    let state = JSON.parse(request);
 
     console.log(state);
     console.log(request);
     console.log(request.response);
-    console.log(request.responseType);
     // console.log(request.response);
     // console.log(response.statename);
     // console.log(request.statename);
