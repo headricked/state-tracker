@@ -16,19 +16,20 @@ function loadStates() {
             console.log(response.json('stateName'));
             // return response.json();
         })
-        .then((data) => {
+        // .then((data) => {
 
-            let table = '<table>';
+        //     let table = '<table>';
 
-            data.results.forEach(result => {
-                table += '<tr>';
-                table += '<td class="name">' + result.stateName + '</td>';
-                table += '</tr>'
-            })
+        //     data.results.forEach(result => {
+        //         table += '<tr>';
+        //         table += '<td class="name">' + result.stateName + '</td>';
+        //         table += '</tr>'
+        //     })
 
-            table += '</table>';
+        //     table += '</table>';
 
-            document.getElementById('state').innerHTML = table;
+        //     document.getElementById('state').innerHTML = table;
 
-        });
+        // })
+        // ;
 }
