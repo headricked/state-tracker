@@ -16,8 +16,8 @@ const pool = new Pool(
 app.use(express.static(__dirname + '/public'));
 
 // views directory for the template files
-// app.set('views', __dirname + '/views');
-// app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
 
 
@@ -57,8 +57,7 @@ function getState(req, res) {
 function getStateFromDb(id, callback) {
     console.log(`getStateFromDb called with id: ${id}`);
 
-    // let sql = `SELECT stateName FROM us_states WHERE id = $1::int`;
-    let sql = `SELECT stateName FROM us_states`;
+    let sql = `SELECT stateName FROM us_states WHERE id = $1::int`;
 
     let params = [id];
 
