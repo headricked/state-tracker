@@ -9,19 +9,19 @@ function loadStates() {
     request.responseType = 'json';
 
     request.onload = function () {
-        console.log(request.response);
+        // console.log(request.response);
         console.log(request.response.statename);
     };
 
-    request.send();
+    // request.send();
 
-    fetch(url)
-        .then(function (statename) {
-            statename.text()
-            .then(function (text) {
-                console.log(text);
-            });
-    });
+    // fetch(url)
+    //     .then(function (statename) {
+    //         statename.text()
+    //         .then(function (text) {
+    //             console.log(text);
+    //         });
+    // });
 }
 
 
