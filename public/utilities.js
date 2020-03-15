@@ -21,7 +21,7 @@ function loadStates() {
 
         let state = JSON.stringify(request.response);
 
-        console.log(request.responseText);
+        console.log(state);
     };
 
     request.send();
