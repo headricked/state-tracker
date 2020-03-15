@@ -16,7 +16,7 @@ const pool = new Pool(
 app.use(express.static(__dirname + '/public'));
 
 // views directory for the template files
-app.set('views', __dirname + '/views');
+// app.set('views', __dirname + '/views');
 // app.set('view engine', 'ejs');
 
 
