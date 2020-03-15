@@ -57,7 +57,8 @@ function getState(req, res) {
 function getStateFromDb(id, callback) {
     console.log(`getStateFromDb called with id: ${id}`);
 
-    let sql = `SELECT stateName FROM us_states WHERE id = $1::int`;
+    // let sql = `SELECT stateName FROM us_states WHERE id = $1::int`;
+    let sql = `SELECT stateName FROM us_states`;
 
     let params = [id];
 
