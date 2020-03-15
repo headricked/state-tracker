@@ -10,6 +10,7 @@ function loadStates() {
 
     console.log(request);
     console.log(request.response);
+    console.log(request.responseText);
     // console.log(request.response);
     // console.log(response.statename);
     // console.log(request.statename);
