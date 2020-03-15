@@ -1,4 +1,4 @@
-import { json } from "express";
+// import { json } from "express";
 
 // add event listener to button
 document.querySelector('#getStates').addEventListener('click', loadStates, false);
