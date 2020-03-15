@@ -22,6 +22,10 @@ function loadStates() {
 
     request.send();
 
+    console.log("request: ", request);
+    console.log("request.response: " + request.response);
+    console.log("request.responseType: " + request.responseType);
+
     // fetch(url).then(function (response) {
     //     response.text().then(function (text) {
     //         poemDisplay.textContent = text;
