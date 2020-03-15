@@ -19,7 +19,7 @@ function loadStates() {
         .then(function (statename) {
             statename.text()
             .then(function (text) {
-                console.log(text);
+                console.log('text: ' + text);
             });
     });
 }
