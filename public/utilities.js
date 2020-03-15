@@ -1,8 +1,7 @@
-// add event listener to button
-document.querySelector('#getStates').addEventListener('click', loadStates, false);
-
 const https = require('https');
 
+// add event listener to button
+document.querySelector('#getStates').addEventListener('click', loadStates, false);
 
 function loadStates() {
     let url = "https://www.reddit.com/r/popular.json";
