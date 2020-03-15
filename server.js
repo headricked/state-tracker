@@ -19,22 +19,6 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-// set up rule that says requests to "/math" should be
-// handled by the handleMath function
-// app.get('/math', handleMath);
-
-// set up rule that says requests to "/math" should be
-// handled by the handleMathService function
-// app.get('/math_service', handleMathService);
-
-
-// set up rule that says requests to "/math" should be
-// handled by the handleCalculation function
-// app.get('/calculation', handleCalculation);
-
-
-
-
 
 
 app.set("port", (process.env.PORT || 5000));
