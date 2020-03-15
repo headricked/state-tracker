@@ -8,6 +8,7 @@ function loadStates() {
     request.open('GET', url);
     request.responseType = 'json';
 
+    console.log(request);
     console.log(request.response);
 
     // request.onload = function () {
