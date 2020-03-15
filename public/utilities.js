@@ -1,11 +1,11 @@
-const https = require('https');
+import { get } from 'https';
 
 // add event listener to button
 document.querySelector('#getStates').addEventListener('click', loadStates, false);
 
 function loadStates() {
     let url = "https://www.reddit.com/r/popular.json";
-    https.get(url, (res) => {
+    get(url, (res) => {
         let body = "";
 
         res.on("data", (chunk) => {
