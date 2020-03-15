@@ -9,7 +9,7 @@ function loadStates() {
     request.responseType = 'json';
 
     // let state = JSON.parse(request.response);
-    let state = JSON.parse(request);
+    let state = JSON.parse(response);
 
     console.log(state);
     console.log(request);
