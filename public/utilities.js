@@ -8,9 +8,9 @@ function loadStates() {
     request.open('GET', url);
     request.responseType = 'json';
 
-    console.log("request: ", request);
-    console.log("request.response: " + request.response);
-    console.log("request.responseType: " + request.responseType);
+    // console.log("request: ", request);
+    // console.log("request.response: " + request.response);
+    // console.log("request.responseType: " + request.responseType);
     // console.log(request.response);
     // console.log(response.statename);
     // console.log(request.statename);
@@ -22,9 +22,9 @@ function loadStates() {
 
     request.send();
 
-    console.log("request: ", request);
-    console.log("request.response: " + request.response);
-    console.log("request.responseType: " + request.responseType);
+    // console.log("request: ", request);
+    // console.log("request.response: " + request.response);
+    // console.log("request.responseType: " + request.responseType);
 
     // fetch(url).then(function (response) {
     //     response.text().then(function (text) {
