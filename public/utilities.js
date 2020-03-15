@@ -1,35 +1,28 @@
-import { get } from 'https';
-
 // add event listener to button
 document.querySelector('#getStates').addEventListener('click', loadStates, false);
 
-function loadStates() {
-    let url = "https://www.reddit.com/r/popular.json";
-    get(url, (res) => {
-        let body = "";
+let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=35';
 
-        res.on("data", (chunk) => {
-            body += chunk;
-        });
+let request = new XMLHttpRequest();
+request.open('GET', url);
+request.responseType = 'text';
 
-        res.on("end", () => {
-            try {
-                let json = JSON.parse(body);
-                // do something with JSON
-                console.log(json);
-            } catch (error) {
-                console.error(error.message);
-            };
-        });
+request.onload = function () {
+    poemDisplay.textContent = request.response;
+};
 
-    }).on("error", (error) => {
-        console.error(error.message);
+request.send();
+
+fetch(url).then(function (response) {
+    response.text().then(function (text) {
+        poemDisplay.textContent = text;
     });
-}
+});
+
+
 
 console.log('hello');
 
-let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=35';
 // let joe = 'getState';
 
 /*
