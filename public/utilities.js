@@ -11,7 +11,8 @@ function loadStates() {
     request.onload = function () {
         // console.log(request.response);
         console.log(request.response.statename);
-        document.getElementById("demo").innerHTML = this.responseText;
+        let state = request.response.statename;
+        document.getElementById("state").innerHTML = state;
     };
 
     request.send();
