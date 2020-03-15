@@ -18,16 +18,17 @@ function loadStates() {
 
     request.onload = function () {
         console.log(request.response);
-        console.log(response);
 
         let state = JSON.stringify(request.response);
-        let estado = request.response.stateName;
+        let estado = response.stateName;
 
         console.log(state);
         console.log(estado);
     };
 
     request.send();
+
+
 
     // console.log("request: ", request);
     // console.log("request.response: " + request.response);
