@@ -7,7 +7,9 @@ function loadStates() {
     let request = new XMLHttpRequest();
     request.open('GET', url);
     request.responseType = 'json';
+    let state = JSON.parse(request.responseType);
 
+    console.log(state);
     console.log(request);
     console.log(request.response);
     console.log(request.responseType);
