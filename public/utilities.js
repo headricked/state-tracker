@@ -13,7 +13,7 @@ function loadStates() {
         console.log(request.response.statename);
     };
 
-    // request.send();
+    request.send();
 
     // fetch(url)
     //     .then(function (statename) {
