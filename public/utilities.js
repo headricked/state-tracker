@@ -14,7 +14,7 @@ function loadStates() {
         .then((response) => {
             // console.log(response);
             // console.log(response.json('stateName'));
-            console.log(response);
+            console.log(response.stateName);
             // return response.json();
         })
         // .then((data) => {
