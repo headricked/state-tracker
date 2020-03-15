@@ -10,6 +10,10 @@ function loadStates() {
 
     console.log(request);
     console.log(request.response);
+    console.log(request.response.statename);
+    console.log(response.statename);
+    console.log(request.statename);
+    console.log('statename');
 
     // request.onload = function () {
     //     poemDisplay.textContent = request.response;
