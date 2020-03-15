@@ -1,11 +1,39 @@
 // add event listener to button
 document.querySelector('#getStates').addEventListener('click', loadStates, false);
 
+const https = require('https');
+
+
+function loadStates() {
+    let url = "https://www.reddit.com/r/popular.json";
+    https.get(url, (res) => {
+        let body = "";
+
+        res.on("data", (chunk) => {
+            body += chunk;
+        });
+
+        res.on("end", () => {
+            try {
+                let json = JSON.parse(body);
+                // do something with JSON
+                console.log(json);
+            } catch (error) {
+                console.error(error.message);
+            };
+        });
+
+    }).on("error", (error) => {
+        console.error(error.message);
+    });
+}
+
 console.log('hello');
 
 let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=35';
 // let joe = 'getState';
 
+/*
 function loadStates() {
     console.log('fire off loadStates(url)');
     console.log(url);
@@ -34,3 +62,4 @@ function loadStates() {
         // })
         // ;
 }
+*/
