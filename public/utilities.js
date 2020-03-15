@@ -9,9 +9,9 @@ function loadStates() {
     request.responseType = 'json';
 
     request.onload = function () {
-        console.log(request);
-        console.log(request.response);
-        console.log(request.response.statename);
+        console.log(request); // the request
+        console.log(request.response); // the response object
+        console.log(request.response.statename); // the property of the response object
         let state = request.response.statename;
         document.getElementById("state").innerHTML = state;
     };
