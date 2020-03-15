@@ -19,7 +19,7 @@ function loadStates() {
     request.onload = function () {
         console.log(request.response);
 
-        let state = JSON.stringify(request.response);
+        let state = JSON.stringify(request.response.stateName);
 
         console.log(state);
     };
