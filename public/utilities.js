@@ -1,5 +1,3 @@
-import { json } from "express";
-
 // add event listener to button
 document.querySelector('#getStates').addEventListener('click', loadStates, false);
 
@@ -9,7 +7,8 @@ function loadStates() {
     let request = new XMLHttpRequest();
     request.open('GET', url);
     request.responseType = 'json';
-    let state = json.parse(request.responseType);
+
+    let state = JSON.parse(request.response);
 
     console.log(state);
     console.log(request);
