@@ -20,7 +20,7 @@ function loadStates() {
         console.log(request.response);
 
         let state = JSON.stringify(request.response);
-        let estado = JSON.stringify(request.response.stateName);
+        let estado = request.response.stateName;
 
         console.log(state);
         console.log(estado);
