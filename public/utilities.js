@@ -10,7 +10,7 @@ function loadStates() {
 
     request.onload = function () {
         console.log(request.response);
-        // console.log(response.text());
+        console.log(request.response.statename);
     };
 
     request.send();
