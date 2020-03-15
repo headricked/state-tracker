@@ -10,16 +10,14 @@ function loadStates() {
 
     request.onload = function () {
         console.log(request.response);
-        console.log(request.response);
         // console.log(response.text());
     };
 
     request.send();
 
     fetch(url)
-        .then(function (response) {
-            // response.text()
-            response.stateName
+        .then(function (stateName) {
+            stateName.text()
             .then(function (text) {
                 console.log(text);
             });
