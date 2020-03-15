@@ -16,9 +16,9 @@ function loadStates() {
     // console.log(request.statename);
     // console.log('statename');
 
-    // request.onload = function () {
-    //     poemDisplay.textContent = request.response;
-    // };
+    request.onload = function () {
+        console.log(request.response);
+    };
 
     request.send();
 
