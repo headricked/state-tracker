@@ -13,7 +13,7 @@ function loadStates() {
     // console.log(request.response);
     // console.log(response.statename);
     // console.log(request.statename);
-    console.log('statename');
+    // console.log('statename');
 
     // request.onload = function () {
     //     poemDisplay.textContent = request.response;
