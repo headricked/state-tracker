@@ -18,7 +18,8 @@ function loadStates() {
 
     fetch(url)
         .then(function (response) {
-            response.text()
+            // response.text()
+            response.stateName
             .then(function (text) {
                 console.log(text);
             });
