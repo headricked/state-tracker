@@ -4,7 +4,7 @@ document.querySelector('#getStates').addEventListener('click', loadStates, false
 let url = 'https://nameless-waters-73580.herokuapp.com/getState?id=35';
 
 function loadStates() {
-    let request = new XMLHttpRequest();
+    // let request = new XMLHttpRequest();
     let response = await fetch(url);
     console.log(response);
 
